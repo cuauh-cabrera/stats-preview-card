@@ -36,10 +36,13 @@ ol a {
     --stat-headings: hsla(0, 0%, 100%, 0.6);
 }
 
+body{
+    background-color: var(--main-background);
+}
+
 /*CONTAINER*/
 .container {
     background-color: var(--main-background);
-    border: solid var(--main-background) 1px;
     width: 100%;
     height: 95vh;
     display: flex;
@@ -53,7 +56,7 @@ ol a {
     border-radius: 0.75rem;
     background-color: var(--card-background);
     width:80%;
-    height: 85vh;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,8 +68,6 @@ ol a {
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     width: 100%;
-    padding: 0;
-    margin: 0;
 }
 
 .card > figure > img {
@@ -81,7 +82,6 @@ ol a {
     border: none;
     background-color: var(--card-background);
     width: 90%;
-    height: 70vh;
     margin-top: 0;
     display: flex;
     flex-direction: column;
@@ -144,21 +144,97 @@ ol a {
 footer {
     background-color: var(--main-background);
     border: solid var(--main-background) 1px;
+    margin-top: 0;
     width: 100%;
     height: 5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 footer>p {
     width: 100%;
     margin: 0;
     text-align: center;
-    color: var(--main-heading-stats);
+    color: var(--main-paragraph);
 }
 
-footer>p>a:visited {
-    color: var(--main-heading-stats);
+#profile-link {
+    text-decoration: none;
+    color: var(--main-paragraph);
+}
+
+/*1440 px*/
+@media (min-width: 1440px) {
+    .container {
+        width: 100%;
+        height: 95vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .card {
+        width: 65%;
+        height: 50vh;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+
+    .card > figure {
+        border-top-left-radius:0;
+        border-top-right-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        order: 1;
+    }
+
+    .card > figure > img {
+        border-top-left-radius:0;
+        border-top-right-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+    }
+
+    .card__text-container {
+        border-bottom-left-radius: 0.75rem;
+        border-top-left-radius: 0.75rem;
+        width: 50%;
+        height:100%;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding-left: 3rem;
+        padding-top: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        order: -1;
+    }
+
+    .card__text-container >  h1 {
+        width: 75%;
+        font-size: 2.15rem;
+        text-align: start;
+    }
+
+    .card__text-container >  p {
+        width: 75%;
+        text-align: start;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .card__text-container--achiev {
+        width: 75%;
+        flex-direction: row;
+    }
 }
